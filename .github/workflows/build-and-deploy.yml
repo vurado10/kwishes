@@ -1,0 +1,41 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Get repository  
+        uses: actions/checkout@v4
+
+      - name: Display username
+        run: echo $USER
+      
+      - name: Display dotnet version
+        run: dotnet --version
+
+      - name: Restart DB
+        run: |
+          docker compose -f ./.deploy/docker-compose-prod.yml -p "kwishes" down db
+          docker compose -f ./.deploy/docker-compose-prod.yml -p "kwishes" up -d db
+        env:
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+
+      - name: Build API
+        run: |
+          dotnet publish -c Release -o /kwishes-deploy/bin/API ./src/API/KWishes.API/KWishes.API.csproj
+          cp -r ./.deploy/docker-compose-prod.yml /kwishes-deploy/bin/API/docker-compose-prod.yml
+          cp -r ./.deploy/API.Dockerfile /kwishes-deploy/bin/API/API.Dockerfile
+          cp -r ./.deploy/.dockerignore /kwishes-deploy/bin/API/.dockerignore
+
+      - name: Deploy API
+        working-directory: /kwishes-deploy/bin/API
+        run: |
+          docker compose -f docker-compose-prod.yml -p "kwishes" build api
+          docker compose -f docker-compose-prod.yml -p "kwishes" down api
+          docker compose -f docker-compose-prod.yml -p "kwishes" up -d api
+          

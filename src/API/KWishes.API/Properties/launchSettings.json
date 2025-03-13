@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "KWishes.API": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:8080",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONFIG_DIRECTORY": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{6E41C7F1-0C09-4681-8F89-95A028609AFF}"
+	ProjectSection(SolutionItems) = preProject
+		.deploy\docker-compose-local.yml = .deploy\docker-compose-local.yml
+		.deploy\docker-compose-prod.yml = .deploy\docker-compose-prod.yml
+		.deploy\.dockerignore = .deploy\.dockerignore
+		.deploy\API.Dockerfile = .deploy\API.Dockerfile
+		.deploy\init-local-data.sql = .deploy\init-local-data.sql
+		.deploy\init.sql = .deploy\init.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Domain", "Core.Domain", "{AD0ED14C-DBF8-4FEC-BA2C-5E62A3DFEC44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{586E5156-B826-4F54-AB8D-79CC1E8C1A0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWishes.API", "src\API\KWishes.API\KWishes.API.csproj", "{93E51DAC-B3F2-44F3-A0EA-C5CF651BF367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_auxiliary", "_auxiliary", "{2197FD7D-2C84-49C7-BC93-BE0F91FFD663}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWishes.Core.Domain", "src\Core.Domain\KWishes.Core.Domain\KWishes.Core.Domain.csproj", "{CE3181A5-7F00-48BE-B57E-76C9FBBC2A12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Application", "Core.Application", "{57FC987A-FC7C-445E-BD9B-20E0E4DBF1E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWishes.Core.Application", "src\Core.Application\KWishes.Core.Application\KWishes.Core.Application.csproj", "{03CCDD25-0E6E-4568-83E9-4B584E4B410D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{9564883C-6EBF-4558-BA2A-239A4ECA1762}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-deploy.yml = .github\workflows\build-and-deploy.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{103C14C7-8F52-4782-9E2F-B73EB134EC62}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Локальная БД.md = docs\Локальная БД.md
+		docs\Содержание.md = docs\Содержание.md
+		docs\Локальное API.md = docs\Локальное API.md
+		docs\Продуктовое API.md = docs\Продуктовое API.md
+		docs\Настройка Google-аутентификации.md = docs\Настройка Google-аутентификации.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93E51DAC-B3F2-44F3-A0EA-C5CF651BF367} = {586E5156-B826-4F54-AB8D-79CC1E8C1A0C}
+		{CE3181A5-7F00-48BE-B57E-76C9FBBC2A12} = {AD0ED14C-DBF8-4FEC-BA2C-5E62A3DFEC44}
+		{03CCDD25-0E6E-4568-83E9-4B584E4B410D} = {57FC987A-FC7C-445E-BD9B-20E0E4DBF1E1}
+		{6E41C7F1-0C09-4681-8F89-95A028609AFF} = {2197FD7D-2C84-49C7-BC93-BE0F91FFD663}
+		{9564883C-6EBF-4558-BA2A-239A4ECA1762} = {6E41C7F1-0C09-4681-8F89-95A028609AFF}
+		{103C14C7-8F52-4782-9E2F-B73EB134EC62} = {2197FD7D-2C84-49C7-BC93-BE0F91FFD663}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93E51DAC-B3F2-44F3-A0EA-C5CF651BF367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E51DAC-B3F2-44F3-A0EA-C5CF651BF367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E51DAC-B3F2-44F3-A0EA-C5CF651BF367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E51DAC-B3F2-44F3-A0EA-C5CF651BF367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3181A5-7F00-48BE-B57E-76C9FBBC2A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3181A5-7F00-48BE-B57E-76C9FBBC2A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3181A5-7F00-48BE-B57E-76C9FBBC2A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3181A5-7F00-48BE-B57E-76C9FBBC2A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03CCDD25-0E6E-4568-83E9-4B584E4B410D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CCDD25-0E6E-4568-83E9-4B584E4B410D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CCDD25-0E6E-4568-83E9-4B584E4B410D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CCDD25-0E6E-4568-83E9-4B584E4B410D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
